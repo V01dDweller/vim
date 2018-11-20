@@ -4,6 +4,7 @@ pipeline {
   options {
     retry(3)
     timestamps()
+    skipStagesAfterUnstable()
   }
   stages {
     stage('Checkout: Code') {
@@ -15,6 +16,12 @@ pipeline {
       steps {
 	sh "cd /var/lib/jenkins/workspace/Vim2/vim;\
 	make"
+      }
+    }
+    stage('Run Tests') {
+      steps {
+	sh "cd /var/lib/jenkins/workspace/Vim2/vim;\
+	make check"
       }
     }
   }
