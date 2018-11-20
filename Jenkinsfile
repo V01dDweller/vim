@@ -16,13 +16,13 @@ pipeline {
     }
     stage('Build') {
       steps {
-	sh "cd /var/lib/jenkins/workspace/Vim2/vim;\
+	sh "cd ${WORKSPACE}/vim;\
 	make"
       }
     }
     stage('Run Tests') {
       steps {
-	sh "cd /var/lib/jenkins/workspace/Vim2/vim;\
+	sh "cd ${WORKSPACE}/vim;\
 	make test"
       }
     }
