@@ -21,7 +21,7 @@ pipeline {
     stage('Run Tests') {
       steps {
 	sh "cd /var/lib/jenkins/workspace/Vim2/vim;\
-	make check"
+	make test"
       }
     }
   }
