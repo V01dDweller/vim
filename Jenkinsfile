@@ -11,7 +11,7 @@ pipeline {
     stage('Build')
     node {
       steps {
-	sh "cd /var/lib/jenkins/workspace/Vim/vim;\
+	sh "cd /var/lib/jenkins/workspace/Vim2/vim;\
 	make"
       }
     }
