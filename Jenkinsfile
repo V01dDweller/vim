@@ -1,6 +1,10 @@
 #!groovy
 pipeline {
   agent any
+  options {
+    retry(3)
+    timestamps()
+  }
   stages {
     stage('Checkout: Code') {
       steps {
