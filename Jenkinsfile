@@ -2,12 +2,14 @@
 pipeline {
   agent any
   options {
-    retry(3)
     timestamps()
     skipStagesAfterUnstable()
   }
   stages {
     stage('Checkout: Code') {
+      options {
+        retry(3)
+      }
       steps {
 	sh "git clone https://github.com/V01dDweller/vim.git"
       }
