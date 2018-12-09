@@ -14,9 +14,6 @@ pipeline {
 	sh "git clone https://github.com/V01dDweller/vim.git"
       }
     }
-    stage ('Install prerequiteies') {
-        sh "yum -y install ncurses-devel"
-    }
     stage('Build') {
       steps {
 	sh "cd ${WORKSPACE}/vim;\
